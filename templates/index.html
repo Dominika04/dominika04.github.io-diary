@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block start %}
+<head>
+    <title>Start</title>
+</head>
+
+    <div class="container">
+        <div class="col-7 overlay_light bor text-center align-self-center" style="min-height: 500px">
+                <h1 class="my-2 diary" style="color: #000; letter-spacing: 5px; font-size: 4rem"> Welcome to your cute diary, {{ name }}! </h1>
+
+                <div class="row justify-content-center">
+                    
+                <div class="col-6 align-self-center my-3">
+                    <div class="d-grid gap-3">
+                        <form action="/books" method="get">
+                            <div class="d-grid gap-2">
+                            <button type="click" class="btn btn-outline-dark btn-lg">Books to read</button>
+                            </div>
+                        </form>
+                        <form action="/notes" method="get">
+                            <div class="d-grid gap-2">
+                            <button type="click" class="btn btn-outline-dark btn-lg">My notes</button>
+                            </div>
+                        </form>
+                        <form action="/settings" method="get">
+                            <div class="d-grid gap-2">
+                            <button type="click" class="btn btn-outline-dark btn-lg">Settings</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+
+{% endblock %}
