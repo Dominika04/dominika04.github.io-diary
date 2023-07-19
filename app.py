@@ -28,7 +28,7 @@ def start():
     if not session.get("name"):
         return redirect("/login")
     name = session.get("name")
-    return render_template("start.html", name=name)
+    return render_template("index.html", name=name)
 
 
 @app.route("/login", methods=["GET", "POST"])
