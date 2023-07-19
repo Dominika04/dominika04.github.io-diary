@@ -1,0 +1,75 @@
+.col {
+    padding: 1rem;
+    color: #fff;
+}
+
+        /*BACKGROUND*/
+.background {
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    min-height: 100vh;
+    max-height: 140vh;
+}
+
+.header_1 {background-image: url('1.jpg');}
+.header_2 {background-image: url('2.jpg');}
+.header_3 {background-image: url('3.jpg');}
+.header_4 {background-image: url('4.jpg');}
+.header_5 {background-image: url('5.jpg');}
+.header_6 {background-image: url('6.jpg');}
+.header_7 {background-image: url('7.jpg');}
+.header_8 {background-image: url('8.jpg');}
+.header_9 {background-image: url('9.jpg');}
+.header_10 {background-image: url('10.jpg');}
+.header_11 {background-image: url('11.jpg');}
+.header_12 {background-image: url('12.jpg');}
+
+
+.x {
+    background-repeat: no-repeat;
+}
+
+.navbar {
+    background: #f2f2f2;
+    border: 3px #fff;
+    border-style: none;
+    border-bottom-style: solid;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+}
+
+.overlay_light {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1.5rem;
+}
+
+.overlay_dark {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1.5rem;
+}
+
+a.nav-link {
+    font-family: "Lucida Handwrting", cursive;
+    font-size: 1.2rem;
+}
+
+.diary {
+    font-family: "Brush Script MT", cursive;
+    font-size: 3rem;
+    color: #fff;
+    text-decoration: none;
+    padding-right: 1.5rem;
+    padding-left: 1rem;
+}
+
+.bor {
+    border: 5px #000;
+    border-style: ridge;
+    border-right-style: none;
+    border-left-style: none;
+    border-radius: 50px;
+}

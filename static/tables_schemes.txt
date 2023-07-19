@@ -1,0 +1,12 @@
+cur.execute("DROP TABLE books")
+
+cur.execute("DELETE FROM notes")
+
+cur.execute("""CREATE TABLE books 
+    (title TEXT, 
+    author TEXT);
+    """)
+
+cur.execute("""CREATE TABLE notes 
+        (title TEXT); 
+        """)

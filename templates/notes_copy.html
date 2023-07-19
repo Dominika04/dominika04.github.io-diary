@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block notes %}
+
+<head>
+    <title>Notes</title>
+</head>
+
+<div class="container">
+    <div class="row">
+        <!--MENU-->
+        <div class="col-2 overlay_light bor">
+            <li class="nav-item dropdown-center">
+                <button class="btn btn-dark btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">My notes</button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    {% if session["list"] %}
+                    {% for element in session["list"] %}
+                    <li>
+                        <form action="/load_note" method="post">
+                            <div class="mb-3">
+                                <input type="hidden" name="get_title" value="{{ element }}" />
+                                <button type="submit" class="dropdown-item  mb-3" dropdown-item>{{ element }}</button>
+                            </div>
+                        </form>
+                        <li><hr class="dropdown-divider"></li>
+                    </li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+              </li>
+        </div>
+    
+        <!--NOTE-->
+        <div class="col-8 align-self-center overlay_light bor">
+            <div class="card" style="background-color: #212529">
+                <div class="card-body">
+                    <h5 class="text-center diary">N o t e</h5>
+                    <form action="/save_note" method="post">
+                        <div class="mb-3">
+                            <textarea class="form-control" name="note_title" rows="1" placeholder="Note title">{% if title %}{{ title }}{% endif %}</textarea>
+                            <!--<input name="note_title" type="text" class="form-control" id="note_title" placeholder="Note title" autocomplate="off">-->
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" name="text" rows="3" placeholder="Write your note here">{% if content %}{{ content }}{% endif %}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-outline-light btn-lg mb-3">Save</button>
+                        </div>
+                    </form>
+                    <form action="/delete_notes" method="post">
+                        <div class="mb-3">
+                            <input type="hidden" name="delete_title" value="{{ title }}" />
+                            <button type="submit" class="btn btn-outline-light btn-lg mb-3">Delete this note</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

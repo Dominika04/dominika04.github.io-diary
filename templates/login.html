@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block login %}
+
+<head>
+    <title>Log in</title>
+</head>
+
+<div class="container">
+    <div class="row text-center">
+
+        <div class="col-1"></div>
+
+        <div class="col-5 overlay">
+            <div class="row" style="height: 20px"></div>
+            <form action="/login" method="post">
+                <input class="btn btn-light" autocomplete="off" autofocus name="surname" type="text" placeholder="Name" aria-label=".form-control-lg example">
+                <div class="row" style="height: 30px"></div>
+                <button class="btn btn-light" type="submit">Log In</button>
+                <div class="row" style="height: 20px"></div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block library %}
+<head>
+    <title>Library</title>
+</head>
+
+<div class="container">
+    <div class="col-9 text-center overlay_light bor">
+        <h3 class="diary" style="color: #000; letter-spacing: 5px">Library</h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row text-center">
+        <div class="col-9 overlay_light bor">
+            <table class="table table-dark table-striped table-bordered border-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Remove</th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider" style="border-top-color: #fff">
+                    {% for book in books %}
+                        <tr>
+                            <td>{{ book[1] }}</td>
+                            <td>{{ book[2] }}</td>
+                            <td>
+                                <form action="/remove_book" method="post">
+                                    <input name="id" type="hidden" value="{{ book[0] }}">
+                                    <button type="submit" class="button btn btn-outline-light btn-sm">Remove the book</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <form action="/books" method="get">
+        <div class="my-3">
+        <button type="click" class="btn btn-dark btn-lg">Come back</button>
+    </div>
+    </form>
+</div>
+{% endblock %}

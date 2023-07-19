@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block books %}
+<head>
+    <title>Books</title>
+</head>
+
+<div class="container">
+    <div class="row text-center ">
+        <div class="col-6 overlay_light bor">
+            <form action="/library" method="post">
+                <button type="click" class="button btn btn-light btn-lg">View the library</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row text-center my-4">
+        <div class="col-6 overlay_light bor">
+            <form action="/add_book" method="post">
+
+                <div class="mb-3">
+                    <h3>What book do you plan to read?</h3>
+                    <input name="title" type="text" class="form-control" id="title" placeholder="Title" autocomplate="off">
+                </div>
+
+                <div class="mb-3">
+                    <input name="author" type="text" class="form-control" id="author" placeholder="Author" autocomplate="off">
+                </div>
+
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-light btn-lg mb-3">Add the book to the library</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
