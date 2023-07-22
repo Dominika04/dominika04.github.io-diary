@@ -1,5 +1,5 @@
 import sqlite3
-import jinja2
+#import jinja2
 from flask import Flask, redirect, render_template, request, session
 from flask_session import Session
 import os
@@ -165,5 +165,8 @@ def delete_notes():
     cur.execute("DELETE FROM notes WHERE title = ?", (delete_title,))
     db.commit()
     db.close()
-
     return redirect("/notes")
+
+@app.route("/to_do_list", methods=["GET", "POST"])
+def to_do_list():
+    return render_template(to_do_list.html)
